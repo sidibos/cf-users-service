@@ -7,6 +7,7 @@ $routes = Services::routes();
 
 
 use App\Controllers\User;
+use App\Controllers\Home;
 
 /*
  * --------------------------------------------------------------------
@@ -38,7 +39,6 @@ $routes->get('delete-user/(:num)', [User::class,'delete/$1']);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-//$routes->get('/', 'Home::index');
 
 /*
  * --------------------------------------------------------------------

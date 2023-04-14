@@ -14,7 +14,7 @@
 # ENVIRONMENT
 #--------------------------------------------------------------------
 
-# CI_ENVIRONMENT = production
+CI_ENVIRONMENT = development
 
 #--------------------------------------------------------------------
 # APP
@@ -30,13 +30,15 @@
 # DATABASE
 #--------------------------------------------------------------------
 
-# database.default.hostname = localhost
-# database.default.database = ci4
-# database.default.username = root
-# database.default.password = root
-# database.default.DBDriver = MySQLi
-# database.default.DBPrefix =
-# database.default.port = 3306
+MYSQL_ROOT_PASSWORD=cod31gn1t3
+MYSQL_DATABASE=ci4
+database.default.hostname = db
+database.default.database = ci4
+database.default.username = root
+database.default.password = cod31gn1t3
+database.default.DBDriver = MySQLi
+database.default.DBPrefix =
+database.default.port = 3306
 
 # database.tests.hostname = localhost
 # database.tests.database = ci4_test
@@ -141,3 +143,4 @@
 #--------------------------------------------------------------------
 
 # curlrequest.shareOptions = true
+UID=1000

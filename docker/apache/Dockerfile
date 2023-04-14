@@ -41,6 +41,7 @@ RUN chmod +x /usr/local/bin/composer
 RUN composer self-update
 
 COPY . /var/www/html/
+
 # 6. we need a user with the same UID/GID with host user
 # so when we execute CLI commands, all the host file's ownership remains intact
 # otherwise command from inside container will create root-owned files and directories
@@ -49,5 +50,9 @@ RUN useradd -G www-data,root -u $uid -d /home/devuser devuser
 RUN mkdir -p /home/devuser/.composer && \
     chown -R devuser:devuser /home/devuser && \
     chmod -R 777 /var/www/html/writable/
+
+WORKDIR /var/www/html/
+RUN composer install --ignore-platform-reqs 
+
 
 EXPOSE 80
